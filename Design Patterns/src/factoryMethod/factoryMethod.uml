@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_5gjaoB_SEeONDIOAipuyTA" name="Model">
+  <ownedComment xmi:id="__ZsGUB_UEeONDIOAipuyTA" annotatedElement="__ZsGUB_UEeONDIOAipuyTA _WIRB8B_TEeONDIOAipuyTA">
+    <body> public AbstrProduct getProduct(){&#xD;
+AbstractProduct p = factMethod();&#xD;
+return p;}&#xD;
+</body>
+  </ownedComment>
+  <ownedComment xmi:id="_SVawgB_VEeONDIOAipuyTA" annotatedElement="_WIRB8B_TEeONDIOAipuyTA">
+    <body> factMeth() is abstract, &#xD;
+so is Factory class&#xD;
+</body>
+  </ownedComment>
+  <ownedComment xmi:id="_jcxTAB_VEeONDIOAipuyTA" annotatedElement="_bJBmEB_TEeONDIOAipuyTA _jcxTAB_VEeONDIOAipuyTA">
+    <body>AbstrProduct ca=new ConcProductA(); &#xD;
+return ca;&#xD;
+</body>
+  </ownedComment>
+  <ownedComment xmi:id="_R0eKIB_WEeONDIOAipuyTA" annotatedElement="_J-lzAB_WEeONDIOAipuyTA">
+    <body> Factory f = new concFactA();&#xD;
+f.getProd().doIt();&#xD;
+---- Client needs to use new, &#xD;
+---- and must know about concFactxxx&#xD;
+---- at compile time. Use factory pattern&#xD;
+---- for runtime dynamics w/o client coupling&#xD;
+---- to new.&#xD;
+&#xD;
+</body>
+  </ownedComment>
+  <packageImport xmi:id="_5gjaoR_SEeONDIOAipuyTA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_WIRB8B_TEeONDIOAipuyTA" name="Factory" isAbstract="true">
+    <ownedOperation xmi:id="_OcJOUB_UEeONDIOAipuyTA" name="factMeth"/>
+    <ownedOperation xmi:id="_UPqFEB_UEeONDIOAipuyTA" name="getProd">
+      <ownedParameter xmi:id="_cOot0B_UEeONDIOAipuyTA" name="p" type="_lTAGwB_TEeONDIOAipuyTA" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_bJBmEB_TEeONDIOAipuyTA" name="concFactA">
+    <generalization xmi:id="_7dGxcB_TEeONDIOAipuyTA" general="_WIRB8B_TEeONDIOAipuyTA"/>
+    <generalization xmi:id="_Ga4bsB_WEeONDIOAipuyTA" general="_WIRB8B_TEeONDIOAipuyTA"/>
+    <ownedOperation xmi:id="_cUOjAB_VEeONDIOAipuyTA" name="factMethod"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_eFHjwB_TEeONDIOAipuyTA" name="concFactB">
+    <generalization xmi:id="_8wH4gB_TEeONDIOAipuyTA" general="_WIRB8B_TEeONDIOAipuyTA"/>
+    <generalization xmi:id="_Im4ZMB_WEeONDIOAipuyTA" general="_WIRB8B_TEeONDIOAipuyTA"/>
+    <ownedOperation xmi:id="_g14JQB_VEeONDIOAipuyTA" name="factMethod"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_lTAGwB_TEeONDIOAipuyTA" name="AbstrProduct">
+    <ownedOperation xmi:id="_Bke_YB_UEeONDIOAipuyTA" name="doIt" isAbstract="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_wExAMB_TEeONDIOAipuyTA" clientDependency="_5bQ1gB_TEeONDIOAipuyTA" name="concProductA">
+    <ownedOperation xmi:id="_H1Zj0B_UEeONDIOAipuyTA" name="doIt"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_z6D2wB_TEeONDIOAipuyTA" clientDependency="_4nEYcB_TEeONDIOAipuyTA" name="concProductB">
+    <ownedOperation xmi:id="_KxKxYB_UEeONDIOAipuyTA" name="doIt"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_4nEYcB_TEeONDIOAipuyTA" name="Realization1" client="_z6D2wB_TEeONDIOAipuyTA" supplier="_lTAGwB_TEeONDIOAipuyTA"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_5bQ1gB_TEeONDIOAipuyTA" name="Realization2" client="_wExAMB_TEeONDIOAipuyTA" supplier="_lTAGwB_TEeONDIOAipuyTA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_J-lzAB_WEeONDIOAipuyTA" clientDependency="_Ar0KoB_XEeONDIOAipuyTA _JteYYB_XEeONDIOAipuyTA" name="client">
+    <ownedOperation xmi:id="_N2q30B_WEeONDIOAipuyTA" name="main" isStatic="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_Ar0KoB_XEeONDIOAipuyTA" name="" client="_J-lzAB_WEeONDIOAipuyTA" supplier="_eFHjwB_TEeONDIOAipuyTA"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_JteYYB_XEeONDIOAipuyTA" name="Usage1" client="_J-lzAB_WEeONDIOAipuyTA" supplier="_bJBmEB_TEeONDIOAipuyTA"/>
+</uml:Model>

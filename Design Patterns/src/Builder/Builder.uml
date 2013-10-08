@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_ZGclIB_lEeONDIOAipuyTA" name="Model">
+  <ownedComment xmi:id="_MCs2cB_vEeONDIOAipuyTA" annotatedElement="_hsU10B_lEeONDIOAipuyTA">
+    <body>public Product construct(){&#xD;
+this.b.instantiatePdct();&#xD;
+this.b.buildDough();&#xD;
+this.b.buildSauce();&#xD;
+this.b.buildToppings();&#xD;
+return this.b.getProduct();}&#xD;
+</body>
+  </ownedComment>
+  <ownedComment xmi:id="_Sc0kwB_wEeONDIOAipuyTA" annotatedElement="_DomHAB_mEeONDIOAipuyTA">
+    <body>this.getProduct().setDough(&quot;Thin&quot;);&#xD;
+</body>
+  </ownedComment>
+  <ownedComment xmi:id="_jQDRYB_wEeONDIOAipuyTA" annotatedElement="_DomHAB_mEeONDIOAipuyTA">
+    <body>this.getProduct().setSauce(&quot;Pesto&quot;)&#xD;
+</body>
+  </ownedComment>
+  <ownedComment xmi:id="_520p8B_wEeONDIOAipuyTA" annotatedElement="_DomHAB_mEeONDIOAipuyTA">
+    <body> this.getProduct().setToppings(&quot;Pepperoni,Sausage&quot;);&#xD;
+</body>
+  </ownedComment>
+  <ownedComment xmi:id="_LfNLAB_zEeONDIOAipuyTA" annotatedElement="_dGi9gB_lEeONDIOAipuyTA">
+    <body> Director d = new Director();&#xD;
+AbstractBuilder b = &#xD;
+new ConcBuilderY();&#xD;
+d.setBuilder(b); &#xD;
+d.construct();</body>
+  </ownedComment>
+  <packageImport xmi:id="_ZGclIR_lEeONDIOAipuyTA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_dGi9gB_lEeONDIOAipuyTA" name="Client">
+    <ownedOperation xmi:id="_IpaCkB_zEeONDIOAipuyTA" name="main" isStatic="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_hsU10B_lEeONDIOAipuyTA" name="Director">
+    <ownedAttribute xmi:id="_xvkagB_mEeONDIOAipuyTA" name="absBuilder" visibility="private"/>
+    <ownedAttribute xmi:id="_JMxSgB_sEeONDIOAipuyTA" name="abstractBuilder" type="_v47ecB_lEeONDIOAipuyTA" aggregation="shared" association="_JNFbkB_sEeONDIOAipuyTA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JMxSgR_sEeONDIOAipuyTA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JMxSgh_sEeONDIOAipuyTA" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_wycxUB_uEeONDIOAipuyTA" name="setBuilder">
+      <ownedParameter xmi:id="_7dU_oB_uEeONDIOAipuyTA" name="b " type="_26igAB_lEeONDIOAipuyTA"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_IFDVIB_vEeONDIOAipuyTA" name="construct">
+      <ownedParameter xmi:id="_oSoIgB_yEeONDIOAipuyTA" type="_I_vx4B_mEeONDIOAipuyTA" direction="return"/>
+    </ownedOperation>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_v47ecB_lEeONDIOAipuyTA" clientDependency="_MjaF4B_mEeONDIOAipuyTA _JDePwB_wEeONDIOAipuyTA" name="AbstractBuilder" isAbstract="true">
+      <ownedAttribute xmi:id="_mCkm4B_xEeONDIOAipuyTA" name="p" visibility="private" type="_I_vx4B_mEeONDIOAipuyTA"/>
+      <ownedOperation xmi:id="_g4_I0B_vEeONDIOAipuyTA" name="buildDough" isAbstract="true"/>
+      <ownedOperation xmi:id="_j6fyAB_vEeONDIOAipuyTA" name="buildSauce" isAbstract="true"/>
+      <ownedOperation xmi:id="_mP1RsB_vEeONDIOAipuyTA" name="buildToppings" isAbstract="true"/>
+      <ownedOperation xmi:id="_qUfZ8B_vEeONDIOAipuyTA" name="instantiatePdct"/>
+      <ownedOperation xmi:id="_sTNCAB_yEeONDIOAipuyTA" name="getProduct">
+        <ownedParameter xmi:id="_z8wNUB_yEeONDIOAipuyTA" type="_I_vx4B_mEeONDIOAipuyTA" direction="return"/>
+      </ownedOperation>
+    </nestedClassifier>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_26igAB_lEeONDIOAipuyTA" name="ConcBuilderX">
+    <generalization xmi:id="_VvVp8B_mEeONDIOAipuyTA" general="_v47ecB_lEeONDIOAipuyTA"/>
+    <ownedOperation xmi:id="_4poTgB_vEeONDIOAipuyTA" name="buildDough"/>
+    <ownedOperation xmi:id="_6yMigB_vEeONDIOAipuyTA" name="buildSauce"/>
+    <ownedOperation xmi:id="_8NxvsB_vEeONDIOAipuyTA" name="buildToppings"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_DomHAB_mEeONDIOAipuyTA" clientDependency="_yj-rQB_sEeONDIOAipuyTA" name="ConcBuilderY">
+    <generalization xmi:id="_VERTsB_mEeONDIOAipuyTA" general="_v47ecB_lEeONDIOAipuyTA"/>
+    <ownedOperation xmi:id="_95cnUB_vEeONDIOAipuyTA" name="buildDough"/>
+    <ownedOperation xmi:id="__bZiQB_vEeONDIOAipuyTA" name="buildSauce"/>
+    <ownedOperation xmi:id="_BVLuYB_wEeONDIOAipuyTA" name="buildToppings"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_I_vx4B_mEeONDIOAipuyTA" name="Product">
+    <ownedAttribute xmi:id="_RpO2kB_uEeONDIOAipuyTA" name="dough">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_WxiNIB_uEeONDIOAipuyTA" name="sauce">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_eFhYIB_uEeONDIOAipuyTA" name="toppings">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_LyiooB_xEeONDIOAipuyTA" name="setDaugh">
+      <ownedParameter xmi:id="_TWMnUB_xEeONDIOAipuyTA" name="d">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_UuFnUB_xEeONDIOAipuyTA" name="setSauce">
+      <ownedParameter xmi:id="_ZY9bAB_xEeONDIOAipuyTA" name="s">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_aQguEB_xEeONDIOAipuyTA" name="setToppings">
+      <ownedParameter xmi:id="_eeo7YB_xEeONDIOAipuyTA" name="t">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_MjaF4B_mEeONDIOAipuyTA" name="creates" client="_v47ecB_lEeONDIOAipuyTA" supplier="_I_vx4B_mEeONDIOAipuyTA"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_JNFbkB_sEeONDIOAipuyTA" name="director_abstractBuilder_1" memberEnd="_JNFbkR_sEeONDIOAipuyTA _JMxSgB_sEeONDIOAipuyTA">
+    <ownedEnd xmi:id="_JNFbkR_sEeONDIOAipuyTA" name="director" type="_hsU10B_lEeONDIOAipuyTA" association="_JNFbkB_sEeONDIOAipuyTA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JNFbkh_sEeONDIOAipuyTA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JNFbkx_sEeONDIOAipuyTA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_yj-rQB_sEeONDIOAipuyTA" name="creates" client="_DomHAB_mEeONDIOAipuyTA" supplier="_I_vx4B_mEeONDIOAipuyTA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_JDePwB_wEeONDIOAipuyTA" name="creates" client="_v47ecB_lEeONDIOAipuyTA" supplier="_I_vx4B_mEeONDIOAipuyTA"/>
+</uml:Model>

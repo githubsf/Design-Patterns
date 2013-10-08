@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_-dcBEB8yEeONDIOAipuyTA" name="model">
+  <ownedComment xmi:id="_6RU7EB80EeONDIOAipuyTA" annotatedElement="_FKOzwB80EeONDIOAipuyTA">
+    <body> public static Product getProduct(String ptc){&#xD;
+if (ptc.equals(&quot;ProductA&quot;)) return new ProductA();&#xD;
+if (ptc.equals(&quot;ProductB&quot;)) return new ProductB();&#xD;
+return null;}</body>
+  </ownedComment>
+  <ownedComment xmi:id="_8p7UsB81EeONDIOAipuyTA" annotatedElement="_1qpOYB81EeONDIOAipuyTA">
+    <body>//static meth call&#xD;
+Product p = Factory.getProduct(&quot;ProductA&quot;); &#xD;
+p.doSomething();&#xD;
+</body>
+  </ownedComment>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_fi7bQB8zEeONDIOAipuyTA" name="AbstractProduct">
+    <ownedOperation xmi:id="_vPxuoB8zEeONDIOAipuyTA" name="doSomething" concurrency="concurrent"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ijx9IB8zEeONDIOAipuyTA" clientDependency="_qWGC4B8zEeONDIOAipuyTA" name="ProductA">
+    <ownedOperation xmi:id="_40lswB8zEeONDIOAipuyTA" name="doSomething"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_lzTNIB8zEeONDIOAipuyTA" clientDependency="_pkfm0B8zEeONDIOAipuyTA" name="ProductB">
+    <ownedOperation xmi:id="_1kBT4B8zEeONDIOAipuyTA" name="doSomething" concurrency="concurrent"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_pkfm0B8zEeONDIOAipuyTA" name="Realization1" client="_lzTNIB8zEeONDIOAipuyTA" supplier="_fi7bQB8zEeONDIOAipuyTA"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_qWGC4B8zEeONDIOAipuyTA" name="Realization2" client="_ijx9IB8zEeONDIOAipuyTA" supplier="_fi7bQB8zEeONDIOAipuyTA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_FKOzwB80EeONDIOAipuyTA" clientDependency="_mAjJgB80EeONDIOAipuyTA _2RS0IB80EeONDIOAipuyTA" name="Factory">
+    <ownedOperation xmi:id="_H3iHgB80EeONDIOAipuyTA" name="getProduct" isStatic="true">
+      <ownedParameter xmi:id="_VUZ8UB80EeONDIOAipuyTA" name="p"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_mAjJgB80EeONDIOAipuyTA" name="creates" client="_FKOzwB80EeONDIOAipuyTA" supplier="_lzTNIB8zEeONDIOAipuyTA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_2RS0IB80EeONDIOAipuyTA" name="creates" client="_FKOzwB80EeONDIOAipuyTA" supplier="_ijx9IB8zEeONDIOAipuyTA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_1qpOYB81EeONDIOAipuyTA" clientDependency="_jpI7UB82EeONDIOAipuyTA" name="Client">
+    <ownedAttribute xmi:id="_xNUSAB82EeONDIOAipuyTA" name="f" type="_FKOzwB80EeONDIOAipuyTA"/>
+    <ownedOperation xmi:id="_5LVt8B81EeONDIOAipuyTA" name="main" isStatic="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_jpI7UB82EeONDIOAipuyTA" name="ref to factory(via context lookup)" client="_1qpOYB81EeONDIOAipuyTA" supplier="_FKOzwB80EeONDIOAipuyTA"/>
+</uml:Model>
